@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+			body {
+			background: #EEE;
+			/* font-size:0.9em !important; */
+			}
+
+			.invoice {
+			width: 970px !important;
+			margin: 50px auto;
+			}
+			.invoice .invoice-header {
+			padding: 25px 25px 15px;
+			}
+			.invoice .invoice-header h1 {
+			margin: 0;
+			}
+			.invoice .invoice-header .media .media-body {
+			font-size: 0.9em;
+			margin: 0;
+			}
+			.invoice .invoice-body {
+			border-radius: 10px;
+			padding: 25px;
+			background: #FFF;
+			}
+			.invoice .invoice-footer {
+			padding: 15px;
+			font-size: 0.9em;
+			text-align: center;
+			color: #999;
+			}
+
+			.logo {
+			max-height: 70px;
+			border-radius: 10px;
+			}
+
+			.dl-horizontal {
+			margin: 0;
+			}
+			.dl-horizontal dt {
+			float: left;
+			width: 80px;
+			overflow: hidden;
+			clear: left;
+			text-align: right;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			}
+			.dl-horizontal dd {
+			margin-left: 90px;
+			}
+
+			.rowamount {
+			padding-top: 15px !important;
+			}
+
+			.rowtotal {
+			font-size: 1.3em;
+			}
+
+			.colfix {
+			width: 12%;
+			}
+
+			.mono {
+			font-family: monospace;
+			}
+			th {
+				background-color: #d9edf7;
+				color: black;
+			} 
+			.bg-info {
+				background-color: #d9edf7;
+				color: black;
+				padding: 3em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container invoice">
+			<div class="invoice-header">
+				<div class="bg-info">
+					<h1 class="text-center text-primary">Shree kandhan Metals</h1>
+					<h4 class="text-center text-dark">STAINLESS STEEL UTENSILS MANUFACTERER & MERCHANTS</h4>
+				</div>
+			  <br><br><br>
+			  <div class="row">
+				<div class="col-xs-8">
+				  <h1>Invoice <small>with Credit</small></h1>
+				  <h4>NO: {{bill_no}} | Date: {{date}}</h4>
+				</div>
+				<div class="col-xs-4">
+
+				</div>
+			  </div>
+			</div>
+			<div class="invoice-body">
+			  <div class="row">
+				<div class="col-xs-6">
+					<div class="card pd-3">
+						<p><strong>Company details:</strong></p>
+						<address>
+							No. 1664/2, New Bye-Pass Road, (Near Bharath Petrol Bunk),
+							VELLORE - 632004, Vellore District.,
+						</address>
+						<p><strong>GSTIN: </strong>33ADRPV1260F1ZG</p>
+					</div>
+				  </div>
+				<div class="col-xs-6 ">
+				  <div class="card pd-3">
+					<p><strong>Customer details:</strong></p>
+					<address>
+						{{to}}
+					</address>
+					<p><strong>GSTIN: </strong>{{party_gstin_no}}</p>
+
+				  </div>
+				</div>
+			  </div>
+			  <br><br><br>
+
+			  <div class="panel panel-info">
+				<table class="table table-bordered table-condensed">
+				  <thead class="thead-dark"> 
+					<tr>
+					  <th>Description</th>
+					  <th class="text-center colfix">HSN CODE</th>
+					  <th class="text-center colfix">No. of Articles</th>
+					  <th class="text-center colfix">Weight (kg/gm)</th>
+					  <th class="text-center colfix">Amount (Rs.)</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td>
+						{{description}}
+					  </td>
+					  <td class="text-right">
+						<p class="mono">{{hsn_code}}</p>
+					  </td>
+					  <td class="text-right">
+						<p class="mono">{{no_of_articles}}</p>
+					  </td>
+					  <td class="text-right">
+						<p class="mono">{{weight}}</p>
+					  </td>
+					  <td class="text-right">
+						<p class="mono">Rs. {{amount}}</p>
+					  </td>
+					</tr>
+				  </tbody>
+				</table>
+			  </div>
+
+			  <br><br>
+
+
+			  <div class="panel panel-default">
+				<table class="table table-bordered table-condensed">
+				  <thead>
+					<tr>
+					  <td class="text-center col-xs-1">Total (Rs.)</td>
+					  <td class="text-center col-xs-1">CGST %</td>
+					  <td class="text-center col-xs-1">SGST %</td>
+					  <td class="text-center col-xs-1">IGST %</td>
+					  <td class="text-center col-xs-1">Round off (Rs.)</td>
+					  <td class="text-center col-xs-1">Grand total (Rs.)</td>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <th class="text-center rowtotal mono">{{total}}</th>
+					  <th class="text-center rowtotal mono">{{cgst}}</th>
+					  <th class="text-center rowtotal mono">{{sgst}}</th>
+					  <th class="text-center rowtotal mono">{{igst}}</th>
+					  <th class="text-center rowtotal mono">{{round_off}}</th>
+					  <th class="text-center rowtotal mono">{{grand_total}}</th>
+					</tr>
+				  </tbody>
+				</table>
+			  </div>
+		  
+			</div>
+		  </div>
+	</body>
+</html>
