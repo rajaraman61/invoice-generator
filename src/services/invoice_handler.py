@@ -24,6 +24,7 @@ class InvoiceHandler(object):
     @classmethod
     def render_template(self, filename, input_file):
         current_directory = os.path.dirname(os.path.abspath(__file__))
+        logger.info(current_directory)
         env = Environment(loader=FileSystemLoader(current_directory))
         return env.get_template(filename).render(
             input_file[0]
