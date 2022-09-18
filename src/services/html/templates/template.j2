@@ -84,74 +84,76 @@
 
 	<body>
 		<div class="container invoice">
+			<div class="row">
+				<div class="col-xs-8">
+				  <h5 class="mono" style="font-size: 1.4em;"><strong>GSTIN: 33ADRPV1260F1ZG</strong><h5>
+				</div>
+				<div class="col-xs-4">
+					<h4 class="text-right mono" style="font-size: 1.4m;"><strong>Phone no. +91 9443792343</strong></h4>
+				</div>
+			  </div>
 			<div class="invoice-header">
-				<div class="bg-info">
+				<div class="bg-info text-center">
 					<h1 class="text-center text-primary">Shree kandhan Metals</h1>
-					<h4 class="text-center text-dark">STAINLESS STEEL UTENSILS MANUFACTERER & MERCHANTS</h4>
+					<h3 class="text-center text-dark">STAINLESS STEEL UTENSILS MANUFACTERER & MERCHANTS</h4>
+					<h4>
+						No. 1664/2, New Bye-Pass Road, (Near Bharath Petrol Bunk),
+						VELLORE - 632004, Vellore District.,
+					</h4>
 				</div>
 			  <br><br><br>
 			  <div class="row">
 				<div class="col-xs-8">
-				  <h1>Invoice <small>with Credit</small></h1>
-				  <h4>NO: {{bill_no}} | Date: {{date}}</h4>
+				  <h1>Invoice</h1>
+				  <h3> No. {{bill_no}}</h3>
 				</div>
 				<div class="col-xs-4">
-
+					<h4 class="text-right" style="font-size: 1.3em;">Date: {{date}}</h4>
 				</div>
 			  </div>
 			</div>
 			<div class="invoice-body">
 			  <div class="row">
-				<div class="col-xs-6">
-					<div class="card pd-3">
-						<p><strong>Company details:</strong></p>
-						<address>
-							No. 1664/2, New Bye-Pass Road, (Near Bharath Petrol Bunk),
-							VELLORE - 632004, Vellore District.,
-						</address>
-						<p><strong>GSTIN: </strong>33ADRPV1260F1ZG</p>
-					</div>
-				  </div>
-				<div class="col-xs-6 ">
+				<div class="col-xs-12">
 				  <div class="card pd-3">
-					<p><strong>Customer details:</strong></p>
-					<address>
-						{{to}}
-					</address>
-					<p><strong>GSTIN: </strong>{{party_gstin_no}}</p>
+					<h3 style="font-size: 1.5em; line-height: 30px;"><strong>Customer details:</strong></h3>
+					<h4 style="font-size: 1.5em; line-height: 30px;">
+						{{to}} lksjdlkasjlfkjaslkdfjlaksjdflkajsdlkfja
+					</h4>
+					<h5 class="mono" style="font-size: 1.8em;"><strong>GSTIN: {{party_gstin_no}}</strong><h5>
 
 				  </div>
 				</div>
 			  </div>
-			  <br><br><br>
+			  <br><br>
 
 			  <div class="panel panel-info">
 				<table class="table table-bordered table-condensed">
 				  <thead class="thead-dark"> 
 					<tr>
-					  <th>Description</th>
-					  <th class="text-center colfix">HSN CODE</th>
-					  <th class="text-center colfix">No. of Articles</th>
-					  <th class="text-center colfix">Weight (kg/gm)</th>
-					  <th class="text-center colfix">Amount (Rs.)</th>
+					  <th style="font-size: 1.3em;">Description</th>
+					  <th  style="font-size: 1.3em;" class="text-center colfix">HSN CODE</th>
+					  <th  style="font-size: 1.3em;" class="text-center colfix">No. of Articles</th>
+					  <th  style="font-size: 1.3em;" class="text-center colfix">Weight (kg/gm)</th>
+					  <th  style="font-size: 1.3em;" class="text-center colfix">Amount (Rs.)</th>
 					</tr>
 				  </thead>
 				  <tbody>
 					<tr>
 					  <td>
-						{{description}}
+						<p  style="font-size: 1.4em;"><strong>{{description}}</strong></p>
 					  </td>
 					  <td class="text-right">
-						<p class="mono">{{hsn_code}}</p>
+						<p  style="font-size: 1.4em;"><strong>{{hsn_code}}</strong></p>
 					  </td>
 					  <td class="text-right">
-						<p class="mono">{{no_of_articles}}</p>
+						<p  style="font-size: 1.4em;"><strong>{{no_of_articles}}</strong></p>
 					  </td>
 					  <td class="text-right">
-						<p class="mono">{{weight}}</p>
+						<p  style="font-size: 1.4em;"><strong>{{weight}}</strong></p>
 					  </td>
 					  <td class="text-right">
-						<p class="mono">Rs. {{amount}}</p>
+						<p  style="font-size: 1.4em;"><strong>{{amount}}.57</strong></p>
 					  </td>
 					</tr>
 				  </tbody>
@@ -165,27 +167,37 @@
 				<table class="table table-bordered table-condensed">
 				  <thead>
 					<tr>
-					  <td class="text-center col-xs-1">Total (Rs.)</td>
-					  <td class="text-center col-xs-1">CGST %</td>
-					  <td class="text-center col-xs-1">SGST %</td>
-					  <td class="text-center col-xs-1">IGST %</td>
-					  <td class="text-center col-xs-1">Round off (Rs.)</td>
-					  <td class="text-center col-xs-1">Grand total (Rs.)</td>
+					  <td  style="font-size: 1.3em;" class="text-center col-xs-1"><strong> Total (Rs.)</strong></td>
+					  <td  style="font-size: 1.3em;" class="text-center col-xs-1"><strong> CGST {{cgst_per}}%</strong></td>
+					  <td  style="font-size: 1.3em;" class="text-center col-xs-1"><strong>SGST {{sgst_per}}%</strong> </td>
+					  <td  style="font-size: 1.3em;" class="text-center col-xs-1"><strong>IGST {{igst_per}}%</strong></td>
+					  <td  style="font-size: 1.3em;" class="text-center col-xs-1"><strong>Round off (Rs.)</strong></td>
+					  <td  style="font-size: 1.3em;" class="text-center col-xs-1"><strong>Grand total (Rs.)</strong></td>
 					</tr>
 				  </thead>
 				  <tbody>
 					<tr>
-					  <th class="text-center rowtotal mono">{{total}}</th>
-					  <th class="text-center rowtotal mono">{{cgst}}</th>
-					  <th class="text-center rowtotal mono">{{sgst}}</th>
-					  <th class="text-center rowtotal mono">{{igst}}</th>
-					  <th class="text-center rowtotal mono">{{round_off}}</th>
-					  <th class="text-center rowtotal mono">{{grand_total}}</th>
+					  <th  style="font-size: 1.3em;" class="text-center rowtotal mono">{{total}}</th>
+					  <th  style="font-size: 1.3em;" class="text-center rowtotal mono">{{cgst}}</th>
+					  <th  style="font-size: 1.3em;" class="text-center rowtotal mono">{{sgst}}</th>
+					  <th  style="font-size: 1.3em;" class="text-center rowtotal mono">{{igst}}</th>
+					  <th  style="font-size: 1.3em;" class="text-center rowtotal mono">{{round_off}}</th>
+					  <th  style="font-size: 1.3em;" class="text-center rowtotal mono">{{grand_total}}</th>
 					</tr>
 				  </tbody>
 				</table>
 			  </div>
 		  
+			  <br><br><br><br><br>
+			  <div class="card">
+				<div class="col-xs-8">
+					<h4><strong>Dispatch No - {{dispatch}}</strong> </h4>
+				</div>
+				<div class="col-xs-4">
+					<h4 style="font-weight: 800w;"><strong>For Shree kandhan Metals</strong></h4>
+					<img width="150px" height="100px" src={{signature}} alt="signature">
+				</div>
+			  </div>
 			</div>
 		  </div>
 	</body>
